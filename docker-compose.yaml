@@ -1,0 +1,8 @@
+cod4server:
+  build: .
+  ports:
+    - "28960:28960/udp"
+  volumes:
+    - ./cod4/main:/home/cod4/main/:ro
+    - ./cod4/pb:/home/cod4/pb/:ro
+    - ./cod4/zone:/home/cod4/zone/:ro
