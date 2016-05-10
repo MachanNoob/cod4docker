@@ -1,5 +1,7 @@
 ## Getting Started
 1. Clone this repository
+1. Customize `cod4/server.cfg`
+1. Set environment variable `COD4_DATA`, e.g. ```export COD4_DATA="/Applications/Call of Duty 4/Call of Duty 4 Data"```
 1. Build the docker image, e.g. ```docker-compose build```
 1. Run the docker image: ```docker-compose up```
 1. Connect to the server!
