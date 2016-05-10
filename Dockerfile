@@ -1,11 +1,12 @@
-FROM centos:latest
+FROM alpine:latest
 MAINTAINER "Johan Rydström" <johan.rydstrom@gmail.com>
 
 #from http://cod4-linux-server.webs.com/
-RUN yum -y install glibc.i686 libgcc.i686 libstdc++.i686 zlib.i686
+RUN apk add --no-cache libgcc libstdc++ zlib && rm -rf /var/cache/apk/*
 
-RUN useradd cod4
-ADD cod4 /home/cod4/
+RUN addgroup cod4
+RUN adduser -D -G cod4 cod4
+ADD cod4 /home/cod4
 RUN chown -R cod4:cod4 /home/cod4
 
 EXPOSE 28960
